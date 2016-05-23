@@ -1,0 +1,66 @@
+{include="header"}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        New <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-template="all/controller">PHP Controller</a></li>
+                        <li><a href="#" data-template="all/view">HTML View</a></li>
+                        <li><a href="#" data-template="all/model">SQL Model</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#" data-folder="">New Folder</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs save-file"><i class="glyphicon glyphicon-floppy-disk"></i></button>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-xs"><i class="glyphicon glyphicon-play"></i></button>
+                        <button class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="tree">
+                <li>
+                    <input type="checkbox" checked="checked" id="c1" />
+                    <label class="tree_label" for="c1">{$fsc->project->PROJECT_NAME}</label>
+                    <ul data-path="">
+                        Loading files...
+
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-9">
+            <div class="editor-panel">
+                <!-- Nav tabs -->
+                <ul class="tab-head nav nav-tabs" role="tablist">
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/plugins/facturascipts-sdk/bower_components/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/plugins/facturascipts-sdk/bower_components/ace-builds/src-noconflict/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+<script src="/plugins/facturascipts-sdk/view/js/editor.js" type="text/javascript" charset="utf-8"></script>
+<div class="context-menu tab-custom-menu" tabindex='-1'>
+    <ul>
+        <li>Save</li>
+        <li class="separator"></li>
+        <li>Close</li>
+        <li>Item 3</li>
+    </ul>
+</div>
+{include="footer"}

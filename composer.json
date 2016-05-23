@@ -1,0 +1,16 @@
+{
+    "name": "manus/facturascipts-sdk",
+    "authors": [
+        {
+            "name": "Manus",
+            "email": "admin@mmunoz.net"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.24"
+    },
+    "autoload":
+    {
+        "files": ["src/funciones.php"]
+    }
+}

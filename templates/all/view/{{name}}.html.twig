@@ -1,0 +1,25 @@
+{include="header"}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header">
+                <h1>
+                    {{ name }}
+                    <a href="{$fsc->url()}" class="btn btn-xs btn-default">
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+            <pre>{{ description }}</pre>
+
+
+        </div>
+    </div>
+</div>
+
+{include="footer"}

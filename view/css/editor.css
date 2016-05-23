@@ -1,0 +1,168 @@
+@charset "UTF-8";
+.editor-panel {
+  position: fixed;
+  left: 25.33%;
+  right: 0px;
+  bottom: 48px;
+  top: 54px;
+  z-index: 1; }
+
+.tab-content {
+  height: 100%; }
+
+.tab-pane {
+  height: 100%; }
+
+.ace_editor {
+  height: 100%; }
+
+.close-tab {
+  cursor: pointer; }
+  .close-tab:hover {
+    color: #c9c9c9; }
+
+.context-menu {
+  position: absolute;
+  display: none;
+  z-index: 10000;
+  background: #fafafa;
+  border: solid 1px #C7C7C7;
+  box-shadow: #B7B7B7 1px 2px 1px;
+  border-radius: 2px; }
+  .context-menu ul {
+    padding: 0;
+    margin-bottom: 0; }
+    .context-menu ul li {
+      padding: 10px;
+      list-style: none;
+      min-width: 200px;
+      cursor: pointer; }
+      .context-menu ul li.separator {
+        padding: 0px;
+        margin: 3px 10px 3px 10px;
+        border-bottom: solid 1px #D4D4D4; }
+      .context-menu ul li:hover {
+        background: #DADADA; }
+      .context-menu ul li:last-child {
+        border-bottom: none; }
+
+/* ————————————————————–
+  Tree core styles
+*/
+.tree {
+  margin: 1em;
+  padding-left: 0; }
+
+.tree input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0); }
+
+.tree input ~ ul {
+  display: none; }
+
+.tree input:checked ~ ul {
+  display: block;
+  padding: 0;
+  margin-top: -5px; }
+
+/* ————————————————————–
+  Tree rows
+*/
+.tree li {
+  line-height: 1.2;
+  position: relative;
+  padding: 0 0 1em 1em;
+  list-style: none; }
+
+.tree ul li {
+  padding: 1em 0 0 1em; }
+
+.tree > li:last-child {
+  padding-bottom: 0; }
+
+/* ————————————————————–
+  Tree labels
+*/
+.tree_label {
+  position: relative;
+  display: inline-block;
+  background: #fff; }
+
+label.tree_label {
+  cursor: pointer; }
+
+label.tree_label:hover {
+  color: #666; }
+
+/* ————————————————————–
+  Tree expanded icon
+*/
+label.tree_label:before {
+  background: #000;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  content: '+';
+  text-align: center;
+  line-height: .9em; }
+
+:checked ~ label.tree_label:before {
+  content: '–'; }
+
+/* ————————————————————–
+  Tree branches
+*/
+.tree li:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -.5em;
+  display: block;
+  width: 0;
+  border-left: 1px solid #777;
+  content: ""; }
+
+.tree_label:after {
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  display: block;
+  height: 0.5em;
+  width: 1em;
+  border-bottom: 1px solid #777;
+  border-left: 1px solid #777;
+  border-radius: 0 0 0 .3em;
+  content: ''; }
+
+label.tree_label:after {
+  border-bottom: 0; }
+
+:checked ~ label.tree_label:after {
+  border-radius: 0 .3em 0 0;
+  border-top: 1px solid #777;
+  border-right: 1px solid #777;
+  border-bottom: 0;
+  border-left: 0;
+  bottom: 0;
+  top: 0.5em;
+  height: auto; }
+
+.tree li:last-child:before {
+  height: 1em;
+  bottom: auto; }
+
+.tree > li:last-child:before {
+  display: none; }
+
+.tree_custom {
+  display: block;
+  background: #eee;
+  padding: 1em;
+  border-radius: 0.3em; }
+
+/*# sourceMappingURL=editor.css.map */

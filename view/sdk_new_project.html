@@ -1,0 +1,68 @@
+{include="header"}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header">
+                <h1>
+                    Crear nuevo proyecto de FacturaScripts
+                </h1>
+            </div>
+        </div>
+    </div>
+    <form action="{$fsc->url()}" method="post">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                    <div class="form-group">
+                        <label>Nombre del proyecto</label>
+                        <input name="name" pattern="[a-z0-9_\-.]+" class="form-control" placeholder="plugin-ventas, plugin-estadisticas, ...">
+                        <small>Este será el nombre de la carpeta que se crea en "plugins/". Solo se admite a-z, 0-9, _, -, y .</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea name="description" rows="5" class="form-control" placeholder="Se preciso y describe bien en que va a consistir tu plugin"></textarea>
+                    </div>
+
+                    <br>
+
+                    <button class="btn btn-success" name="save">Crear proyecto</button>
+            </div>
+
+            <div class="col-md-4">
+                <div class="templates">
+                    <label>Crear una vista / controlador de inicio</label><br>
+                    <label><input type="radio" name="template" value="all"> Vista, modelo y controlador</label>
+                    <label><input type="radio" name="template" value="controller"> Solo controlador</label>
+                    <label><input type="radio" name="template" value=""> Proyecto vacío</label>
+                    <div>
+                        <div data-radio="template" data-value="all">
+                            Esto necesita que especifiques una tabla, que sera la que genere el modelo.
+                            <input class="form-control" name="model">
+                        </div>
+                        <div data-radio="template" data-value="controller">
+                            Solo genera un controlador, se puede usar para implementar una API o similares.
+                        </div>
+                        <div data-radio="template" data-value="">
+                            No genera nigún archivo extra.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+
+    $("[data-radio]").addClass("hidden");
+    $("input[type=radio]").click(radioHandler);
+    $("input[type=radio]").eq(0).click();
+    function radioHandler()
+    {
+        var $radio = $(this);
+        $("[data-radio]").addClass("hidden");
+        $("[data-radio='" + $radio.attr("name") + "'][data-value='" + $radio.val() + "']").removeClass("hidden");
+    }
+</script>
+{include="footer"}
