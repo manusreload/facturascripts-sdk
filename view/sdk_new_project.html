@@ -15,12 +15,12 @@
             <div class="col-md-5 col-md-offset-1">
                     <div class="form-group">
                         <label>Nombre del proyecto</label>
-                        <input name="name" pattern="[a-z0-9_\-.]+" class="form-control" placeholder="plugin-ventas, plugin-estadisticas, ...">
+                        <input name="name" pattern="[a-z0-9_\-.]+" value="{$fsc->_POST['name']}" class="form-control" placeholder="plugin-ventas, plugin-estadisticas, ...">
                         <small>Este será el nombre de la carpeta que se crea en "plugins/". Solo se admite a-z, 0-9, _, -, y .</small>
                     </div>
                     <div class="form-group">
                         <label>Descripción</label>
-                        <textarea name="description" rows="5" class="form-control" placeholder="Se preciso y describe bien en que va a consistir tu plugin"></textarea>
+                        <textarea name="description" rows="5"  class="form-control" placeholder="Se preciso y describe bien en que va a consistir tu plugin">{$fsc->_POST['description']}</textarea>
                     </div>
 
                     <br>
@@ -37,7 +37,7 @@
                     <div>
                         <div data-radio="template" data-value="all">
                             Esto necesita que especifiques una tabla, que sera la que genere el modelo.
-                            <input class="form-control" name="model">
+                            <input class="form-control" name="model" value="{$fsc->_POST['model']}">
                         </div>
                         <div data-radio="template" data-value="controller">
                             Solo genera un controlador, se puede usar para implementar una API o similares.

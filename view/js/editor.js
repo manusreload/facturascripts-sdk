@@ -1,6 +1,40 @@
 $(document).ready(function()
 {
     var project = getVariable("project");
+    var editorTheme = "textmate";
+    var editorThemes = ["chaos", 
+        "chrome", 
+        "clouds", 
+        "clouds_midnight", 
+        "cobalt", 
+        "crimson_editor", 
+        "dawn", 
+        "dreamweaver", 
+        "eclipse", 
+        "github", 
+        "idle_fingers", 
+        "iplastic", 
+        "katzenmilch", 
+        "kr_theme", 
+        "kuroir", 
+        "merbivore", 
+        "merbivore_soft", 
+        "mono_industrial", 
+        "monokai", 
+        "pastel_on_dark", 
+        "solarized_dark", 
+        "solarized_light", 
+        "sqlserver", 
+        "terminal", 
+        "textmate", 
+        "tomorrow", 
+        "tomorrow_night", 
+        "tomorrow_night_blue", 
+        "tomorrow_night_bright", 
+        "tomorrow_night_eighties", 
+        "twilight", 
+        "vibrant_ink", 
+        "xcode"];
     var treeGeneration = 0;
     var tabGeneration = 0;
     var lastTab = null;
@@ -95,7 +129,7 @@ $(document).ready(function()
     }
     function openFile(name, data, cursor)
     {
-
+        $(".tab-content-empty").addClass("hidden");
         var current = $("[data-file='" + name +"'");
         if(current.length == 0)
         {
@@ -106,7 +140,8 @@ $(document).ready(function()
             tabContent.append(dom);
             tabContent.appendTo(".tab-content");
             var editor = ace.edit(dom[0]);
-            editor.setTheme("ace/theme/twilight");
+            editors.push(editor);
+            editor.setTheme("ace/theme/" + editorTheme);
             var mode = getModeByExtension(getExtension(name));
             editor.session.setMode(mode);
             editor.setOptions({
@@ -169,6 +204,14 @@ $(document).ready(function()
         return vars;
     }
     
+    function setEditorTheme(theme)
+    {
+        editorTheme = theme;
+        for(key in editors)
+        {
+            editors[key].setTheme("ace/theme/" + theme);
+        }
+    }
     
     
     // And finally THE MAGIC!!!!!
